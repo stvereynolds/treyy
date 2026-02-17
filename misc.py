@@ -90,7 +90,11 @@ stream_url = f"https://www.twitch.tv/{decoded_user}"
 while True:
 
     with SB( uc=True, locale="en", ad_block=True, chromium_arg='--disable-webgl', proxy=False ) as driver_main:
-
+        driver_main.activate_cdp_mode(
+            stream_url,
+            tzone=tz_id,
+            geoloc=(lat, lon)
+        )
         delay_ms = random_pause()
 
         driver_main.sleep(2 + jitter_delay())
