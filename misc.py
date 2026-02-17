@@ -89,7 +89,7 @@ stream_url = f"https://www.twitch.tv/{decoded_user}"
 
 while True:
 
-    with SB( uc=True, locale="en", ad_block=True, chromium_arg='--disable-webgl', proxy=proxy_settings ) as driver_main:
+    with SB( uc=True, locale="en", ad_block=True, chromium_arg='--disable-webgl', proxy=False ) as driver_main:
 
         delay_ms = random_pause()
 
